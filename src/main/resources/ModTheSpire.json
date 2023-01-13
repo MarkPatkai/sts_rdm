@@ -1,0 +1,14 @@
+{
+  "modid": "red_mage",
+  "name": "Red Mage",
+  "author_list": [
+    "MarkPatkai"
+  ],
+  "description": "A character mod based on FFXIV's Red Mage",
+  "dependencies": [
+    "basemod"
+  ],
+  "version": "0.0.0",
+  "mts_version": "3.6.3",
+  "sts_version": "08-30-2018"
+}
