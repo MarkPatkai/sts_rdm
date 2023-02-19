@@ -1,17 +1,15 @@
 package io.fatefc.redmage;
 
 import basemod.BaseMod;
-import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import io.fatefc.redmage.base.CharacterInitializer;
 import io.fatefc.redmage.card.Jolt;
+import io.fatefc.redmage.card.Veraero;
+import io.fatefc.redmage.card.Verthunder;
 import io.fatefc.redmage.character.RedMage;
 import io.fatefc.redmage.character.RedMageClass;
-import io.fatefc.redmage.relic.RapierRelic;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -43,6 +41,8 @@ public class RedMageInitializer implements CharacterInitializer, EditCardsSubscr
     @Override
     public void receiveEditCards() {
         BaseMod.addCard(new Jolt());
+        BaseMod.addCard(new Verthunder());
+        BaseMod.addCard(new Veraero());
     }
 
     @Override

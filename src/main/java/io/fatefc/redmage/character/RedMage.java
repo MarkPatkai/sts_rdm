@@ -1,6 +1,5 @@
 package io.fatefc.redmage.character;
 
-import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -10,9 +9,15 @@ import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.Claw;
+import com.megacrit.cardcrawl.cards.blue.EchoForm;
+import com.megacrit.cardcrawl.cards.blue.Leap;
+import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
+import com.megacrit.cardcrawl.cards.green.CloakAndDagger;
+import com.megacrit.cardcrawl.cards.red.Anger;
+import com.megacrit.cardcrawl.cards.red.Clash;
+import com.megacrit.cardcrawl.cards.red.Rage;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.Defect;
-import com.megacrit.cardcrawl.characters.Watcher;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -23,8 +28,8 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.screens.stats.CharStat;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbBlue;
 import com.megacrit.cardcrawl.ui.panels.energyorb.EnergyOrbInterface;
+import io.fatefc.redmage.card.Jolt;
 
-import javax.print.attribute.standard.MediaSize;
 import java.util.ArrayList;
 
 
@@ -76,17 +81,16 @@ public class RedMage extends AbstractPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> cards = new ArrayList<>();
         cards.add("Jolt");
-        cards.add("Jolt");
-        cards.add("Jolt");
-        cards.add("Jolt");
-        cards.add("Jolt");
+        cards.add("Strike_R");
         return cards;
     }
 
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> relics = new ArrayList<>();
-        relics.add("Prismatic Shard");
+        relics.add("Toxic Egg 2");
+        relics.add("PrismaticShard");
+        // TODO: Default relic these currently are for development as there are no Red Mage cards; Toxic Egg is just for fun, Prismatic is mandatory
         return relics;
     }
 
@@ -121,22 +125,23 @@ public class RedMage extends AbstractPlayer {
 
     @Override
     public ArrayList<AbstractCard> getCardPool(ArrayList<AbstractCard> arrayList) {
-        return null;
+      ArrayList<AbstractCard> cardPool = new ArrayList<>();
+      return cardPool;
     }
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return null;
+        return new Jolt();
     }
 
     @Override
     public Color getCardTrailColor() {
-        return null;
+        return Color.RED;
     }
 
     @Override
     public String getLeaderboardCharacterName() {
-        return null;
+        return "RED_MAGE";
     }
 
     @Override
