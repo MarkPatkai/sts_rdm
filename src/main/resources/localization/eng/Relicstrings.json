@@ -1,0 +1,10 @@
+{
+  "Rapier": {
+    "NAME": "Rapier",
+    "FLAVOR": "Red mage's handy tool!",
+    "DESCRIPTIONS": [
+      "Allows you to Dualcast skills: NL Cast a skills, consecutive skill will cost 0.",
+      "NL Allows you to use 'Enchanted' melee combo: NL if you have 10 Black and White Mana replace your 'Riposte' with 'Enchanted Riposte'"
+    ]
+  }
+}

@@ -2,28 +2,26 @@ package io.fatefc.redmage.card;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import io.fatefc.redmage.buff.BlackMana;
-import io.fatefc.redmage.buff.WhiteMana;
-import io.fatefc.redmage.character.RedMageCardColor;
 
-public class Jolt extends CustomCard {
 
-    public static final String ID = "Jolt";
-    public static final String NAME = "Jolt";
-    public static final String DESCRIPTION = "Deal !D! damage. Increase your Black Mana and White Mana by 1.";
-    public static final String IMG_PATH = "img/card/jolt.png";
-    private static final int COST = 1;
+public class Riposte extends CustomCard {
+
+    public static final String ID = "Riposte";
+
+    public static final String NAME = "Riposte";
+    public static final String DESCRIPTION = "Deal !D! damage. Adds a Zwerchau to your hand. Upgrades to Enchanted Riposte when you have 10 Black and White Mana.";
+    public static final String IMG_PATH = "img/card/riposte.png";
+    private static final int COST = 3;
     private static final int ATTACK_DMG = 5;
     private static final int UPGRADE_PLUS_DMG = 7;
 
-    public Jolt() {
+    public Riposte() {
         super(ID, NAME,
                 IMG_PATH,
                 COST, DESCRIPTION, CardType.ATTACK,
@@ -41,20 +39,40 @@ public class Jolt extends CustomCard {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
         }
+    }
 
+    private boolean hasGauge(AbstractPlayer player) {
+        if (player.getPower("BlackMana") == null ||
+                player.getPower("WhiteMana") == null) {
+            return false;
+        }
+        int bm = AbstractDungeon.player.getPower("BlackMana").amount;
+        int wm = AbstractDungeon.player.getPower("WhiteMana").amount;
+
+        return bm == wm && bm >= 10;
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer player, AbstractMonster monster) {
+        return !hasGauge(player);
     }
 
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(abstractMonster,
                 new DamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abstractPlayer, abstractPlayer, new BlackMana(abstractPlayer, 1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(abstractPlayer, abstractPlayer, new WhiteMana(abstractPlayer, 1)));
+        this.addToBot(new MakeTempCardInHandAction(new Zwerchau()));
 
     }
 
     @Override
+    public void triggerWhenDrawn() {
+        if (hasGauge(AbstractDungeon.player))
+            this.addToBot(new DiscardSpecificCardAction(this));
+    }
+
+    @Override
     public AbstractCard makeCopy() {
-        return new Jolt();
+        return new Riposte();
     }
 }

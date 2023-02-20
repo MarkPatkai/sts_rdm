@@ -81,16 +81,21 @@ public class RedMage extends AbstractPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> cards = new ArrayList<>();
         cards.add("Jolt");
-        cards.add("Strike_R");
+        cards.add("Jolt");
+        cards.add("Jolt");
+        cards.add("Jolt");
+        cards.add("Vercure");
+        cards.add("Verthunder");
+        cards.add("Veraero");
+        cards.add("Riposte");
         return cards;
     }
 
     @Override
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> relics = new ArrayList<>();
-        relics.add("Toxic Egg 2");
-        relics.add("PrismaticShard");
-        // TODO: Default relic these currently are for development as there are no Red Mage cards; Toxic Egg is just for fun, Prismatic is mandatory
+        relics.add("PrismaticShard");         // TODO: Default relic these currently are for development as there are no Red Mage cards; Prismatic is mandatory
+        relics.add("Rapier");
         return relics;
     }
 
@@ -141,7 +146,7 @@ public class RedMage extends AbstractPlayer {
 
     @Override
     public String getLeaderboardCharacterName() {
-        return "RED_MAGE";
+        return "Red Mage";
     }
 
     @Override
@@ -231,12 +236,12 @@ public class RedMage extends AbstractPlayer {
 
     @Override
     public Texture getCustomModeCharacterButtonImage() {
-        return null;
+        return new Texture("img/menu/rdm_icon.png");
     }
 
     @Override
     public CharacterStrings getCharacterString() {
-        return null;
+        return new CharacterStrings();
     }
 
     @Override
