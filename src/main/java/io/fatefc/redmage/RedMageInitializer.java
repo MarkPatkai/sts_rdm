@@ -26,6 +26,10 @@ public class RedMageInitializer implements CharacterInitializer, EditCardsSubscr
     public final static String BUTTON = "img/menu/rdm_icon.png";
     public final static String PORTRAIT = "img/menu/rdm_portrait.jpg";
 
+    public String makeId(String id) {
+        return String.format("rdm:%s",id);
+    }
+
     public RedMageInitializer() {
         BaseMod.subscribe(this);
 

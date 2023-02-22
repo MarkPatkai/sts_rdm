@@ -1,0 +1,17 @@
+[
+    {
+      "PROPER_NAME": "Black Mana",
+      "NAMES": ["black_mana"],
+      "DESCRIPTION": "Black Mana gauge you've accumulated by casting spells. Allows you to perform powerful combos."
+    },
+    {
+        "PROPER_NAME": "White Mana",
+        "NAMES": ["white_mana"],
+        "DESCRIPTION": "White Mana gauge you've accumulated by casting spells. Allows you to perform powerful combos."
+    },
+    {
+        "PROPER_NAME": "Combo",
+        "NAMES": ["combo"],
+        "DESCRIPTION": "Add a card to your hand. Can only be added by this action."
+    }
+]

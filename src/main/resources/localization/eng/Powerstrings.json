@@ -1,0 +1,14 @@
+{
+    "rdm:BlackMana": {
+      "NAME": "Black Mana",
+      "DESCRIPTIONS": ["Your current black mana gauge: #b{0}"]
+    },    
+    "rdm:WhiteMana": {
+        "NAME": "White Mana",
+        "DESCRIPTIONS": ["Your current white mana gauge: #b{0}"]
+    },
+    "rdm:ComboReady": {
+        "NAME": "Combo Ready",
+        "DESCRIPTION": ["You can perform combos."]
+    }
+}
