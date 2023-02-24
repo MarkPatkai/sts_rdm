@@ -1,10 +1,25 @@
 {
-  "Rapier": {
+  "rdm:Rapier": {
     "NAME": "Rapier",
     "FLAVOR": "Red mage's handy tool!",
     "DESCRIPTIONS": [
       "Allows you to Dualcast skills: NL Cast a skills, consecutive skill will cost 0.",
       " NL Allows you to use 'Enchanted' melee combo: NL if you have 10 Black and White Mana replace your 'Riposte' with 'Enchanted Riposte'"
     ]
+  },
+  "rdm:Talekeeper": {
+    "NAME" : "Talekeeper",
+    "FLAVOR": "A Red Mage relic from the far east",
+    "DESCRIPTIONS": [
+      "NL Allows you to perform even more combos related to your Melee Combo.",
+      "NL You can now perform Verholy/Verflare, Scorch and Resolution as a Combo."
+    ]
+  },
+  "rdm:TiaHat": {
+    "NAME": "X'rhun Tia's Hat",
+    "FLAVOR": "A famous teacher comes to teach you about ways of the red mage",
+    "DESCRIPTIONS" : [
+      "NL Allows you to perform Enchanted versions of Reprise and Moulinet."
+    ]
   }
-}
+} 

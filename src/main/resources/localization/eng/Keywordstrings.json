@@ -12,6 +12,21 @@
     {
         "PROPER_NAME": "Combo",
         "NAMES": ["combo"],
-        "DESCRIPTION": "Add a card to your hand. Can only be added by this action."
-    }
+        "DESCRIPTION": "Add a card to your hand. Can only be added by this action. If you perform a Combo Break the card is exhausted."
+    },
+    {
+        "PROPER_NAME": "Combo Break",
+        "NAMES": ["combo_break"],
+        "DESCRIPTION": "After you have added a combo card to your hand, performing a different action than the como will Exhaust your combo card."
+    },
+    {
+        "PROPER_NAME": "Melee Combo",
+        "NAMES": ["melee_combo"],
+        "DESCRIPTION": "Powerful attacks that are chained together."
+     },
+     {
+        "PROPER_NAME": "Enchanted",
+        "NAMES": ["enchanted"],
+        "DESCRIPTION": "More powerful version of card of the same name."
+     }
 ]

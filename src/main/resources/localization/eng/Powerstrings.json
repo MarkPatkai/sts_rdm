@@ -10,5 +10,9 @@
     "rdm:ComboReady": {
         "NAME": "Combo Ready",
         "DESCRIPTION": ["You can perform combos."]
+    },
+    "rdm:Manafication": {
+        "NAME": "Manafication",
+        "DESCRIPTION": "Your Combo cards have #b25% more attack."
     }
 }
